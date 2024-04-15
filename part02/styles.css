@@ -1,0 +1,23 @@
+* {
+    background-color: brown;
+    font-size: xx-large;
+}
+
+p.c1 {
+    background-color: yellow;
+    color: green;
+}
+
+p.c2 {
+    font-size: large;
+}
+
+h1.c1 {
+    background-color: lightblue;
+    color: green;
+}
+
+.test{
+    background-color: red;
+    color:white
+}
