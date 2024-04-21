@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function fnc() {
+        let x = t1.value;
+        let y = t2.value;
+        if (x > y) {
+          lbl.innerHTML = `${x} is greater`;
+        } else if (y > x) {
+          lbl.innerHTML = `${y} is greater`;
+        } else {
+          lbl.innerHTML = `Both are equal`;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p><input type="text" placeholder="Enter a" id="t1" /></p>
+    <p><input type="text" placeholder="Enter b" id="t2" /></p>
+    <button onclick="fnc()">Submit</button>
+    <p><label id="lbl"></label></p>
+  </body>
+</html>

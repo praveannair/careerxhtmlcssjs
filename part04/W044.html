@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function f1() {
+        let n = t1.value;
+        if (n % 2 == 0) {
+          lbl.innerHTML = "Even Number";
+          lbl.style.color="green"
+          lbl.style.background="yellow"
+        } else {
+          lbl.innerHTML = "Odd Number";
+          lbl.style.color="blue"
+          lbl.style.background="pink"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p><input type="text" id="t1" /></p>
+    <button onclick="f1()">Submit</button>
+    <p><label id="lbl"></label></p>
+  </body>
+</html>
