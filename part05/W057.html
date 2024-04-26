@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      students = [
+        { name: "John", age: 20 },
+        { name: "Mike", age: 23 },
+      ];
+      //   console.log(students);
+      //   console.log(students[0]);
+      //   console.log(students[0].name);
+      // students.forEach((value)=>{
+      //     console.log(value)
+      // })
+      let newArr = students.map((value) => {
+        if (value.name === "John") {
+          value.city = "Bangalore";
+        } else {
+          value.city = "Hyderabad";
+        }
+        return value;
+      });
+      console.log(newArr);
+    </script>
+  </body>
+</html>
