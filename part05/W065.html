@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function fnc() {
+        // p1.innerHTML = "Hello World";
+        // document.getElementById("p2").innerHTML = "Good Morning";
+        // document.querySelector("#p3").innerHTML = "Good Evening";
+        // let msg = document.getElementById("p1")
+        // let messages = document.getElementsByTagName("p");
+        // let messages = document.getElementsByName("caption");
+        // let messages = document.getElementsByClassName("c1");
+        // let messages = document.querySelectorAll("p")
+        let messages = document.querySelectorAll(".c1")
+        for (let i = 0; i < messages.length; i++) {
+          messages[i].style.background = "yellow";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p id="p1" name="caption" class="c1">This is a paragraph</p>
+    <p id="p2" name="caption" class="c1">This is second paragraph</p>
+    <p id="p3" name="caption" class="c1">This is third paragraph</p>
+    <button onclick="fnc()">Click</button>
+  </body>
+</html>
