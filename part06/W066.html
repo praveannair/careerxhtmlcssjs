@@ -8,23 +8,33 @@
       function validate() {
         let strEmail = document.getElementById("txtEmail").value;
         let strPass = document.getElementById("txtPass").value;
-        if (strEmail === "john@gmail.com" && strPass === "1234") {
-          lblMessage.innerHTML = "Welcome John";
+        let found = users.find((value)=>{
+            return value.email===strEmail && value.pass===strPass
+        })
+        console.log(found)
+        if (found) {
+            let strName = found.name
+          lblMessage.innerHTML = `Welcome ${strName}`;
         } else {
           lblMessage.innerHTML = "Access Denied";
         }
       }
-      function register(){
-       //store name,email and password in an array
-       // of objects
-       //use array.push method
-       //users = [{name:"john",email:"john@gmail.com",pass:1234}]
-      ////code here////
-      const users = []
-      
-      /////////////
-      console.log(users)
-    }
+      const users = [];
+      function register() {
+        //store name,email and password in an array
+        // of objects
+        // create object to store name,email,pass
+        //use push the object into the array users
+        //users = [{name:"john",email:"john@gmail.com",pass:1234}]
+        ////code here////
+        const obj = {};
+        obj.name = txtRegName.value;
+        obj.email = txtRegEmail.value;
+        obj.pass = txtRegPass.value;
+        users.push(obj);
+        /////////////
+        lblUsers.innerHTML = JSON.stringify(users);
+      }
     </script>
   </head>
   <body>
@@ -33,6 +43,7 @@
     <p><input type="text" id="txtEmail" placeholder="Enter Email" /></p>
     <p><input type="password" id="txtPass" placeholder="Enter Password" /></p>
     <button onclick="validate()">Login</button>
+    <p><button>Create New Account</button></p>
     <hr />
     <h3>Register Here...</h3>
     <p><label id="lblRegMessage"></label></p>
@@ -42,5 +53,8 @@
       <input type="password" id="txtRegPass" placeholder="Enter Password" />
     </p>
     <button onclick="register()">Register</button>
+    <p>Already a member? <button>Login Here...</button></p>
+    <hr>
+    <label id="lblUsers"></label>
   </body>
 </html>
