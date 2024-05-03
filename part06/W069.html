@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form>
+      <select id="fruits" multiple>
+        <option value="apple">Apple</option>
+        <option value="pear">Pear</option>
+        <option value="banana">Banana</option>
+      </select>
+      <br />
+      <input type="button" onclick="disp()" value="Click" />
+      <br /><br />
+      <label id="lbl"></label>
+    </form>
+    <script>
+      function disp() {
+        // fruits.options[2].selected = true;
+        // fruits.selectedIndex = 2;
+        // str = fruits.value;
+        str=""
+        for (let e of fruits.options){
+          if(e.selected)  str += e.value + ","
+        }
+
+        lbl.innerHTML = str;
+      }
+    </script>
+  </body>
+</html>
+
