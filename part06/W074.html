@@ -6,17 +6,15 @@
     <title>Document</title>
   </head>
   <body>
+    <select id="s">
+
+    </select>
+
     <script>
-      function a() {
-        document.write("Hello World");
-      }
-      function start(f) {
-        f();
-      }
-      function initialize(){
-        start(a)
-      }
-      initialize()
+        let fruits = ["Apple","Orange","Banana"]
+        for (let i=0;i<fruits.length;i++){
+            s.options[i] = new Option(fruits[i],fruits[i])
+        }
     </script>
   </body>
 </html>

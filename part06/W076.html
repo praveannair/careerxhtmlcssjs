@@ -6,17 +6,13 @@
     <title>Document</title>
   </head>
   <body>
-    <script>
-      function a() {
-        document.write("Hello World");
-      }
-      function start(f) {
-        f();
-      }
-      function initialize(){
-        start(a)
-      }
-      initialize()
+    <script type="module">
+        // import add from "./calc.js"
+      import { add, subtract } from "./calc.js";
+      let sum = add(4, 5);
+      console.log(sum);
+      let sub = subtract(6,2)
+      console.log(sub)
     </script>
   </body>
 </html>

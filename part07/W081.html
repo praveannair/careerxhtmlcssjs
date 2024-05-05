@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="divTimer"></div>
+    <p>
+      <button onclick="restartTimer()">Reset</button>
+      <button onclick="stopTimer()">Stop</button>
+    </p>
+    <script>
+      var myInterval = setInterval(startTimer, 1000);
+      var timer = 0;
+      function startTimer() {
+        timer += 1;
+        divTimer.innerHTML = timer;
+      }
+      function stopTimer() {
+        clearInterval(myInterval);
+      }
+
+    </script>
+  </body>
+</html>

@@ -6,17 +6,14 @@
     <title>Document</title>
   </head>
   <body>
+    <p>Wait 5 seconds for the message...</p>
+    <h2 id="demo"></h2>
     <script>
-      function a() {
-        document.write("Hello World");
+      function myfunc() {
+        let h = document.querySelector("#demo");
+        h.innerHTML = "Hello World";
       }
-      function start(f) {
-        f();
-      }
-      function initialize(){
-        start(a)
-      }
-      initialize()
+      setTimeout(myfunc,5000)
     </script>
   </body>
 </html>

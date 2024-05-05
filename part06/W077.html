@@ -7,16 +7,14 @@
   </head>
   <body>
     <script>
-      function a() {
-        document.write("Hello World");
-      }
-      function start(f) {
-        f();
-      }
-      function initialize(){
-        start(a)
-      }
-      initialize()
+      let age = 2;
+    //   if (age > 18) {
+    //     console.log(true);
+    //   } else {
+    //     console.log(false);
+    //   }
+        let isEligible = age > 18 ? "Allowed" : "Declined";
+        console.log(isEligible);
     </script>
   </body>
 </html>
