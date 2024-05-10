@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .before {
+        position: fixed;
+        width: 300px;
+        height: 100%;
+        top: 0px;
+        left: 100%;
+        background-color: silver;
+        transition: 0.5s;
+      }
+      .after {
+        left: calc(100% - 300px);
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Click</button>
+    <div id="m">Main</div>
+    <div id="d" class="before">
+      Hello World
+      <button id="closeBtn">Close</button>
+    </div>
+    <script>
+      btn.onclick = () => {
+        d.classList.toggle("after");
+      };
+
+      //   btn.onclick = () => {
+      //     d.classList.add("after");
+      //   };
+      //   closeBtn.onclick = () => {
+      //     d.classList.remove("after")
+      //   }
+    </script>
+  </body>
+</html>

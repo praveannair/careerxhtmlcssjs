@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+      }
+      .divProducts {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        column-gap: 40px;
+        padding: 30px;
+      }
+      .divSides {
+        width: 200px;
+        border: solid 2px;
+        background-color: silver;
+      }
+      .outer {
+        width:600px;
+        margin:auto
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+    <h1 id="scoreCard"></h1>
+    <div class="container">
+      <div class="divSides"><h1>Fruits</h1></div>
+      <div class="divProducts"></div>
+      <div class="divSides"><h1>Vegetables</h1></div>
+    </div>
+    <div class="rule">
+      <h2>Game Rule:</h2>
+      <h3>Press Left Arrow if you see a Fruit</h3>
+      <h3>Press Right Arrow if you see a Vegetable</h3>
+    </div>
+</div>
+    <script>
+      let divProducts = document.querySelector(".divProducts");
+      let products = [
+        { id: 1, name: "Tomato", image: "/images/tomato.png", cid: 1 },
+        { id: 2, name: "Cabbage", image: "/images/cabbage.png", cid: 1 },
+        { id: 3, name: "Apple", image: "/images/apple.png", cid: 0 },
+        { id: 4, name: "Orange", image: "/images/orange.png", cid: 0 },
+        { id: 5, name: "Tomato", image: "/images/tomato.png", cid: 1 },
+        { id: 6, name: "Cabbage", image: "/images/cabbage.png", cid: 1 },
+        { id: 7, name: "Apple", image: "/images/apple.png", cid: 0 },
+        { id: 8, name: "Orange", image: "/images/orange.png", cid: 0 },
+        { id: 9, name: "Apple", image: "/images/apple.png", cid: 0 },
+        { id: 10, name: "Orange", image: "/images/orange.png", cid: 0 },
+      ];
+      let cid = 0;
+      let score = 0;
+      let index = 0;
+      const showProduct = () => {
+        index = Math.round(Math.random() * 9);
+        console.log(products[index].cid);
+        let txt = `<div>
+                  <div><img width='150px' src=${products[index].image}></div>
+                  <div>${products[index].name}</div>
+                   </div>`;
+        divProducts.innerHTML = txt;
+      };
+      let d = document.body;
+      d.onkeydown = (e) => {
+        cid = products[index].cid;
+        console.log(cid);
+        if (e.key == "ArrowLeft" && cid === 0) {
+          score++;
+        } else if (e.key == "ArrowRight" && cid === 1) {
+          score++;
+        }
+        scoreCard.innerHTML = "Score: " + score;
+        showProduct();
+      };
+      showProduct();
+    </script>
+  </body>
+</html>

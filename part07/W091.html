@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="vehicle">
+      Vehicle
+      <div id="car">
+        Car
+        <div id="toyota">Toyota</div>
+      </div>
+    </div>
+    <script>
+      vehicle.addEventListener("click", () => {
+        alert("Vehicle");
+      },{capture:true});
+      car.addEventListener("click", () => {
+        alert("Car");
+      },{capture:true});
+      toyota.addEventListener("click", () => {
+        alert("Toyota");
+      },{capture:true});
+
+    //   vehicle.addEventListener("click", () => {
+    //     alert("Vehicle");
+    //   });
+    //   car.addEventListener("click", () => {
+    //     alert("Car");
+    //   });
+    //   toyota.addEventListener("click", () => {
+    //     alert("Toyota");
+    //   });
+    </script>
+  </body>
+</html>

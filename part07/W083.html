@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Login Page</h2>
+    <p><input type="text" placeholder="Enter Email" /></p>
+    <input type="password" id="txtPwd" placeholder="Enter Password" />
+    <input type="checkbox" onclick="togglePwd()" /></p>
+    <p><button>Login</button></p>
+    <script>
+      function togglePwd() {
+        if (txtPwd.type === "password") {
+          txtPwd.type = "text";
+        } else {
+          txtPwd.type = "password";
+        }
+      }
+    </script>
+  </body>
+</html>

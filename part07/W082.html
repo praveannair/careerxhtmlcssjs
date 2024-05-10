@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Image Rollover</h2>
+    <img src="/images/1.PNG" style="height: 200px;width: 200px;" id="img1">
+    <script>
+        let picture = document.getElementById("img1")
+        picture.onmouseover = function () {
+            img1.src = "/images/2.PNG"
+        }
+        picture.onmouseout = function () {
+            img1.src = "/images/1.PNG"
+        }
+    </script>
+</body>
+</html>

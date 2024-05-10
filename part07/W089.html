@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea id="txtArea" rows="10" cols="40"></textarea>
+    <script>
+      let b = document.body;
+      b.onkeydown = (e) => {
+        if (e.key==="ArrowLeft"){
+            txtArea.value = "Good Morning";
+        }
+        else if (e.key==="ArrowRight"){
+            txtArea.value = "Good Evening";
+        }
+        //txtArea.value = e.key;
+      };
+    </script>
+  </body>
+</html>

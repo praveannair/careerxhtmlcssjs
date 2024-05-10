@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const n1 = [1, 2, 3];
+      const n2 = [4, 5, 6];
+      const n = [...n1,...n2,9]
+      console.log(n)
+      //////////////////
+      const obj1 = {
+        brand:"Ford",
+        model:"Mustang",
+        color:"Red"
+      }
+      const obj2 = {
+        type:"car",
+        year:2021,
+        color:"yellow"
+      }
+      const obj = {...obj1,...obj2}
+      console.log(obj)
+    </script>
+  </body>
+</html>
