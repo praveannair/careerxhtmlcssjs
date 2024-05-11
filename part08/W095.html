@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function f1(value) {
+        if (value % 2 === 0) {
+          alert("Even Number");
+        } else {
+          alert("Odd Number");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p onclick="alert(event.target.innerHTML)">This is a dummy text</p>
+    <p onclick="alert(event.target.nodeName)">This is a dummy text</p>
+    <p onclick="alert(event.target.tagName)">This is a dummy text</p>
+    <p><input onchange="f1(event.target.value)" type="text" /></p>
+  </body>
+</html>

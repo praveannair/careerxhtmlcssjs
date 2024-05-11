@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <p><input type="text" id="username"></p>
+    <p><input type="password" id="password"></p>
+    <p><input type="checkbox">Remember Me</p>
+    <button>Login</button>
+    <script>
+        document.cookie = "name=John;expires=Sun, 12 May 2024 12:00:00 UTC"
+        document.cookie = "pass=1234;expires=Sun, 12 May 2024 12:00:00 UTC"
+        //document.cookie = "name=John;expires=Sun, 12 May 2023 12:00:00 UTC"
+        // document.cookie = "pass=1234;expires=Sun, 12 May 2023 12:00:00 UTC"
+        console.log(document.cookie)
+        let data = document.cookie.split(";")
+        username.value = data[0].split("=")[1]
+        password.value = data[1].split("=")[1]
+    </script>
+</body>
+</html>

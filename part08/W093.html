@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <input type="text" id="t1"> -->
+    <button id="btn">Click</button>
+    <textarea id="t2" rows="10" cols="20"></textarea>
+    <script>
+      // t1.addEventListener('click',()=> {
+      //     t2.append("click\n")
+      // })
+      // btn.addEventListener('click',()=> {
+      //     t2.append("click\n")
+      // })
+      // btn.addEventListener('dblclick',()=> {
+      //     t2.append("double click\n")
+      // })
+      // btn.addEventListener('mouseover',()=> {
+      //     t2.append("mouseover\n")
+      // })
+      // btn.addEventListener('mouseout',()=> {
+      //     t2.append("mouseout\n")
+      // })
+      // btn.addEventListener('mousedown',()=> {
+      //     t2.append("mousedown\n")
+      // })
+      // btn.addEventListener('mouseup',()=> {
+      //     t2.append("mouseup\n")
+      // })
+      // btn.addEventListener('contextmenu',()=> {
+      //     t2.append("RightClick\n")
+      // })
+      btn.addEventListener("click", (e) => {
+        if (e.altKey) {
+            t2.append("Alt+Click");
+        }
+        if (e.shiftKey) {
+            t2.append("Shift+Click");
+        }
+        if (e.ctrlKey) {
+            t2.append("Ctrl+Click");
+        }
+      });
+    </script>
+  </body>
+</html>

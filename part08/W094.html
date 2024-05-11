@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea id="t1" rows="5" cols="20">
+Apple, Orange, Mango
+    </textarea>
+    <textarea id="t2" rows="5" cols="20"></textarea>
+    <script>
+      t1.oncopy = t1.oncut = function () {
+        t2.value = document.getSelection();
+      };
+      t2.onpaste = function (event) {
+        alert(event.clipboardData.getData("text/plain"));
+      };
+    </script>
+  </body>
+</html>
