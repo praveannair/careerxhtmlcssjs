@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+  <head> </head>
+
+  <body>
+    <h1 id="head"></h1>
+
+    <div>
+      <img style="width: 50px" src="/images/flower.jpg" id="image" />
+
+      <img style="width: 50px" src="/images/ball.png" id="ball" />
+    </div>
+
+    <script>
+
+            ball.style.position = "absolute";
+
+            let score = 0;
+
+            let i = 1;
+
+            function ballfall(n) {
+
+              i++;
+
+              ball.style.left = n + "px";
+
+              ball.style.top = i + "px";
+
+              if (i < 500) setTimeout(ballfall, 10);
+
+              else {
+
+                i = 0;
+
+                n = Math.random() * 400;
+
+                ballfall(n);
+
+              }
+
+              let bl = parseInt(ball.style.left);
+
+              let im = parseInt(image.style.left);
+
+              let bt = parseInt(ball.style.top);
+
+              if (bl > im - 10 && bl < im + 10 && bt > 498) {
+
+                score++;
+
+                head.innerHTML="Game Points: " + score;
+
+              }
+
+            }
+
+            ballfall(100);
+
+            image.style.position = "absolute";
+
+            l = 400;
+
+            t = 400;
+
+            image.style.left = l + "px";
+
+            image.style.top = t + "px";
+
+            let b = document.body;
+
+            b.onkeydown =
+
+              b.onkeyup =
+
+              b.onkeypress =
+
+                function handle(e) {
+
+                  if (e.key == "ArrowLeft") l -= 5;
+
+                  if (e.key == "ArrowUp") t -= 10;
+
+                  if (e.key == "ArrowRight") l += 5;
+
+                  if (e.key == "ArrowDown") t += 10;
+
+      
+
+                  image.style.left = l + "px";
+
+                  image.style.top = t + "px";
+
+                };
+    </script>
+  </body>
+</html>

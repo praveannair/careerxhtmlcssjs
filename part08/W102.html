@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+    <style>
+
+      .container {
+
+        display: flex;
+
+        width: 1000px;
+
+        margin: auto;
+
+      }
+
+      .divMenu {
+
+        width: 150px;
+
+        padding: 30px;
+
+        line-height: 30px;
+
+        border-right: dashed 1px;
+
+        align-items: center;
+
+      }
+
+      .divProducts {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        row-gap: 20px;
+
+        column-gap: 40px;
+
+        padding: 30px;
+
+      }
+
+      .divProduct {
+
+        width:200px;
+
+        text-align: center;
+
+
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="divMenu"></div>
+
+      <div class="divProducts"></div>
+
+    </div>
+
+    <script>
+
+      let divMenu = document.querySelector(".divMenu");
+
+      let divProducts = document.querySelector(".divProducts");
+
+      let categories = [
+
+        { id: 1, name: "Fruits" },
+
+        { id: 2, name: "Vegetables" },
+
+
+      ];
+
+      let products = [
+
+        { id: 1, name: "Tomato", image:"/images/tomato.png", price: 63, cid: 2 },
+
+        { id: 2, name: "Cabbage",image:"/images/cabbage.png", price: 80, cid: 2 },
+
+        { id: 3, name: "Apple",image:"/images/apple.jpg", price: 123, cid: 1 },
+
+        { id: 4, name: "Orange",image:"/images/orange.jpg", price: 43, cid: 1 },
+
+      ];
+
+      const showMenu = () => {
+
+        let txt = `<li onclick='showProducts()'>Show All</li>`;
+
+        categories.forEach((value) => {
+
+          txt += `
+
+          <li onclick='showProducts(${value.id})'>${value.name}</li>
+
+        `;
+
+        });
+
+        divMenu.innerHTML = txt;
+
+      };
+
+      const showProducts = (id) => {
+
+        let txt = "";
+
+        let filterred = []
+
+
+
+        if (id) {
+
+             filterred = products.filter(element=>element.cid===id)
+
+        }
+
+        else{
+
+             filterred = products
+
+      
+
+        }
+
+        filterred.forEach((value) => {
+
+        //   if (value.cid == id) {
+
+            txt += `<div class='divProduct'>
+
+            <div><img width='150px' src=${value.image}></div>
+
+            <div>${value.name}</div>
+
+            <div>${value.price}</div>
+
+            <div><button>Add</button></div>
+
+            </div>`;
+
+        //   }
+
+        });
+
+        divProducts.innerHTML = txt;
+
+      };
+
+      showMenu();
+
+      showProducts();
+
+    </script>
+
+  </body>
+
+</html>

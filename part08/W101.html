@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      .container {
+        display: flex;
+
+        column-gap: 20px;
+
+        margin: auto;
+
+        justify-content: center;
+      }
+
+      .container .frm {
+        padding: 25px;
+
+        background-color: teal;
+      }
+
+      .container .tbl {
+        padding: 10px;
+
+        border: solid 1px;
+
+        line-height: 20px;
+      }
+
+      thead {
+        background-color: grey;
+
+        color: white;
+      }
+
+      input {
+        padding: 5px;
+
+        width: 200px;
+      }
+
+      input[type="button"] {
+        width: 100%;
+
+        background-color: black;
+
+        color: white;
+
+        border: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="frm">
+        <h3>New Customer Form</h3>
+
+        <form id="myfrm">
+          <p><input type="text" placeholder="Enter Name" /></p>
+
+          <p><input type="text" placeholder="Enter Email" /></p>
+
+          <p><input type="text" placeholder="Enter Phone" /></p>
+
+          <input type="hidden" />
+
+          <input type="button" onclick="addUser()" value="Add" />
+        </form>
+      </div>
+
+      <div class="tbl"></div>
+    </div>
+
+    <script>
+      let tbl = document.querySelector(".tbl");
+
+      let userArray = [];
+
+      let userInput = document.getElementsByTagName("input");
+
+      const addUser = () => {
+        let userObj = {};
+
+        userObj.name = userInput[0].value;
+
+        userObj.email = userInput[1].value;
+
+        userObj.phone = userInput[2].value;
+
+        userArray.push(userObj);
+
+        showUsers();
+
+        document.getElementById("myfrm").reset();
+      };
+
+      const deleteUser = (index) => {
+        delete userArray[index];
+
+        document.getElementById("myfrm").reset();
+
+        showUsers();
+      };
+
+      const saveUser = () => {
+        let idx = userInput[3].value;
+
+        userArray[idx].name = userInput[0].value;
+
+        userArray[idx].email = userInput[1].value;
+
+        userArray[idx].phone = userInput[2].value;
+
+        document.getElementById("myfrm").reset();
+
+        userInput[4].value = "Add";
+
+        userInput[4].onclick = addUser;
+
+        showUsers();
+      };
+
+      const editUser = (index) => {
+        userInput[0].value = userArray[index].name;
+
+        userInput[1].value = userArray[index].email;
+
+        userInput[2].value = userArray[index].phone;
+
+        userInput[3].value = index;
+
+        userInput[4].value = "Save";
+
+        userInput[4].onclick = saveUser;
+      };
+
+      const showUsers = () => {
+        let str = `<table><thead><tr>
+
+                    <th>Name</th><th>Email</th><th>Phone</th>
+
+                    </tr></thead>`;
+
+        userArray.forEach((element, index) => {
+          str += `<tr>
+
+            <td>${element.name}</td>
+
+            <td>${element.email}</td>
+
+            <td>${element.phone}</td>
+
+            <td><i class="fa fa-edit" onclick='editUser(${index})'></i></td>
+
+            <td><i class="fa fa-trash-o" onclick='deleteUser(${index})'></i></td>
+
+            </tr>`;
+        });
+
+        str += `</table>`;
+
+        tbl.innerHTML = str;
+
+        // userInput[3].value = "Add";
+      };
+    </script>
+  </body>
+</html>
