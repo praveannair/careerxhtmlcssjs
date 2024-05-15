@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let calc = function () {
+        this.i = 0;
+        this.add = function (i) {
+          this.i = this.i + i;
+          return this;
+        };
+        this.subtract = function (i) {
+          this.i = this.i - i;
+          return this;
+        };
+        this.print = function () {
+          document.write(this.i);
+        };
+      };
+
+      let c = new calc()
+      c.add(20).subtract(5).print()
+
+      // let name="John"
+      // let result = name.charAt(0).toLowerCase()
+      // document.write(result)
+
+
+    // let str = "India"
+    // console.log(str.toLocaleUpperCase('TR'))
+
+    </script>
+  </body>
+</html>

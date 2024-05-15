@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1" id="mytable">
+      <tr>
+        <th>Subject</th>
+        <th>Marks</th>
+      </tr>
+      <tr>
+        <td>Maths</td>
+        <td>85</td>
+      </tr>
+      <tr>
+        <td>English</td>
+        <td>90</td>
+      </tr>
+      <tr>
+        <td>Science</td>
+        <td>70</td>
+      </tr>
+    </table>
+    <script>
+      for (let i = 0; i < mytable.rows.length; i++) {
+        let marks = mytable.rows[i].cells[1];
+        if (marks.innerHTML < 80) {
+          marks.style.backgroundColor = "red";
+        }
+      }
+    </script>
+  </body>
+</html>
