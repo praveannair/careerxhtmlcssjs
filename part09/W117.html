@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //abstraction
+        class Rectangle {
+            constructor(length,width){
+                this.length = length
+                this.width = width
+            }
+            area(){
+                console.log(this.length*this.width)
+            }
+        }
+        let r = new Rectangle(4,5)
+        r.area()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Inheritance
+      class Company {
+        constructor(dept) {
+          this.dept = dept;
+        }
+        getCompany() {
+          return "ABC Inc";
+        }
+      }
+      class Employee extends Company {
+        constructor(name, dept) {
+          super(dept);
+          this.name = name;
+        }
+        show() {
+          return "I am " + this.name + " from " + this.dept + " department.";
+        }
+      }
+
+      const emp1 = new Employee("John", "HR");
+      console.log(emp1.show())
+      console.log(emp1.getCompany())
+    </script>
+  </body>
+</html>

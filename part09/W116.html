@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //polymorphism
+        class Shape {
+            draw() {
+                console.log("Draw Shape")
+            }
+        }
+        class Square extends Shape {
+            draw() {
+                console.log("Draw Square")
+            }
+        }
+        class Circle extends Shape {
+            info(){
+                console.log("I am a Circle")
+            }
+        }
+        let sqr = new Square()
+        sqr.draw()
+        let c = new Circle()
+        c.draw()
+    </script>
+</body>
+</html>
