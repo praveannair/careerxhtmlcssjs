@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //
+      const makePayment = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let err = true;
+            if (!err) resolve();
+            else reject("Payment Error");
+          }, 5000);
+        });
+      };
+
+      const sendEmail = () => {
+        console.log("Email: Order has been processed");
+      };
+
+      const sendMessage = () => {
+        console.log("Message: Order has been processed");
+      };
+
+      makePayment()
+        .then(() => sendEmail())
+        .then(() => sendMessage())
+        .catch((err) => console.log(err));
+
+      //   //Promise
+      //   const f1 = (v) => {
+      //     return new Promise((resolve, reject) => {
+      //       setTimeout(() => {
+      //         if (v>0) resolve(5)
+      //         else reject("Something went wrong");
+      //       }, 5000);
+      //     });
+      //   };
+
+      //   const f2 = (x) => {
+      //     console.log(x + 6);
+      //   };
+
+      //   f1(1)
+      //     .then((a) => f2(a))
+      //     .catch((err) => console.log(err));
+
+      //callback
+      //   const f1 = (fnc) => {
+      //     setTimeout(() => {
+      //       fnc(5);
+      //     }, 5000);
+      //   };
+      //   const f2 = (a) => {
+      //     console.log(a + 10);
+      //   };
+      //   f1(f2);
+
+      ////////////////////////
+      //asynchronous : occuring at the same time
+      //   const f1 = () => {
+      //     setTimeout(()=>{
+      //         return 5
+      //     },5000)
+      //   };
+      //   const f2 = (a) => {
+      //     console.log(a + 10);
+      //   };
+      //   let n1 = f1(); // if takes 5 seconds
+      //   f2(n1); // then this will throw an error
+    </script>
+  </body>
+</html>
