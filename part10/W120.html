@@ -7,29 +7,71 @@
   </head>
   <body>
     <script>
-      //
-      const makePayment = () => {
+      //only functions that returns promise can use .then
+      const f1 = () => {
         return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            let err = true;
-            if (!err) resolve();
-            else reject("Payment Error");
-          }, 5000);
+          //   resolve(5);
+          reject("Something went wrong");
         });
       };
 
-      const sendEmail = () => {
-        console.log("Email: Order has been processed");
+      const f2 = () => {
+        console.log("Function 2");
       };
 
-      const sendMessage = () => {
-        console.log("Message: Order has been processed");
+      const f3 = async () => {
+        try {
+          let n1 = await f1();
+          f2(n1);
+        } catch (err) {
+          console.log(err);
+        }
       };
 
-      makePayment()
-        .then(() => sendEmail())
-        .then(() => sendMessage())
-        .catch((err) => console.log(err));
+      f3();
+
+      // f1()
+      //   .then(() => f2())
+      //   .catch((err) => console.log(err));
+
+      //only functions that returns promise can use .then
+      //   const f1 = () => {
+      //     return new Promise((resolve, reject) => {
+      //       resolve();
+      //     });
+      //   };
+
+      //   const f2 = () => {
+      //     console.log("Function 2");
+      //   };
+
+      //   f1()
+      //     .then(() => f2())
+      //     .catch((err) => console.log(err));
+
+      //
+      //   const makePayment = () => {
+      //     return new Promise((resolve, reject) => {
+      //       setTimeout(() => {
+      //         let err = true;
+      //         if (!err) resolve();
+      //         else reject("Payment Error");
+      //       }, 5000);
+      //     });
+      //   };
+
+      //   const sendEmail = () => {
+      //     console.log("Email: Order has been processed");
+      //   };
+
+      //   const sendMessage = () => {
+      //     console.log("Message: Order has been processed");
+      //   };
+
+      //   makePayment()
+      //     .then(() => sendEmail())
+      //     .then(() => sendMessage())
+      //     .catch((err) => console.log(err));
 
       //   //Promise
       //   const f1 = (v) => {
