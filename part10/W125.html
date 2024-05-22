@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //closure - access the variables from parent
+      function main() {
+        let b = 1;
+        function sub() {
+          return b;
+        }
+        return sub;
+      }
+      let f1 = main();
+      console.log(f1());
+      console.log(f1());
+    </script>
+  </body>
+</html>

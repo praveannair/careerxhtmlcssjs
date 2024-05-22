@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <html>
+    <head>
+      <script
+        type="text/javascript"
+        src="https://www.gstatic.com/charts/loader.js"
+      ></script>
+      <style>
+        input{padding:5px;font-size:24px}
+      </style>
+    </head>
+    <body>
+      <h1>Sales Report - Sep 2022</h1>
+      <div>
+        <input type="text" id="t1" placeholder="Maruthi"  /><br /><br />
+        <input type="text" id="t2" placeholder="Toyota" /><br /><br />
+        <input type="text" id="t3" placeholder="Nissan" /><br /><br />
+        <input type="text" id="t4" placeholder="Kia" /><br /><br />
+        <input type="button" value="Show Chart" onclick="drawChart()" />
+      </div>
+      <div id="piechart" style="width: 900px; height: 500px"></div>
+      <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ["Sales", "Sep 2022"],
+            ["Maruthi", parseInt(t1.value)],
+            ["Toyota", parseInt(t2.value)],
+            ["Nissan", parseInt(t3.value)],
+            ["Kia", parseInt(t4.value)],
+          ]);
+
+          var options = {
+            title: "Sales Report",
+          };
+          var chart = new google.visualization.PieChart(
+            document.getElementById("piechart")
+          );
+          chart.draw(data, options);
+        }
+      </script>
+    </body>
+  </html>
+</html>

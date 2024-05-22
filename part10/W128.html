@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <body>
+    <div>
+      <h1>Sales Report - Sep 2022</h1>
+      <input type="text" id="t1" placeholder="Maruthi" /><br /><br />
+      <input type="text" id="t2" placeholder="Toyota" /><br /><br />
+      <input type="text" id="t3" placeholder="Nissan" /><br /><br />
+      <input type="text" id="t4" placeholder="Kia" /><br /><br />
+      <input type="button" value="Show Chart" onclick="drawChart()" />
+    </div>
+
+    <div id="myPlot" style="width: 100%; max-width: 700px"></div>
+
+    <script>
+      function drawChart() {
+        let a = parseInt(t1.value);
+        let b = parseInt(t2.value);
+        let c = parseInt(t3.value);
+        let d = parseInt(t4.value);
+        var xArray = ["Maruthi", "Toyota", "Nissan", "Kia"];
+        var yArray = [a, b, c, d];
+
+        var layout = { title: "Sales Report" };
+
+        var data = [{ labels: xArray, values: yArray, type: "pie" }];
+
+        Plotly.newPlot("myPlot", data, layout);
+      }
+    </script>
+  </body>
+</html>
